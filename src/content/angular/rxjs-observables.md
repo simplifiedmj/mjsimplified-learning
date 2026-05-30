@@ -6,7 +6,6 @@ description: "Master reactive programming in Angular using RxJS Observables. Lea
 date: "2026-05-18"
 thumbnail: "/images/tutorials/rxjs-observables.jpg"
 tags: ["Angular", "RxJS", "TypeScript", "Reactive Programming"]
-youtubeId: "2LCoP8-Z4c0"
 author: "MJSimplified"
 ---
 

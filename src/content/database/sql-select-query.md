@@ -6,7 +6,6 @@ description: "Learn how to write efficient SQL SELECT queries to fetch, filter, 
 date: "2026-05-15"
 thumbnail: "/images/tutorials/sql-select.jpg"
 tags: ["SQL", "DBMS", "Database Basics", "Queries"]
-youtubeId: "HXV3zeQKqGY"
 author: "MJSimplified"
 ---
 

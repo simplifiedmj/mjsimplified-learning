@@ -6,7 +6,6 @@ description: "A step-by-step tutorial on securing Spring Boot applications using
 date: "2026-05-22"
 thumbnail: "/images/tutorials/spring-security-jwt.jpg"
 tags: ["Spring Boot", "Spring Security", "JWT", "Java", "Backend Security"]
-youtubeId: "KxqlJBlHZfI"
 author: "MJSimplified"
 ---
 

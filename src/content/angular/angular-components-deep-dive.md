@@ -6,7 +6,6 @@ description: "Master Angular component design, from metadata configuration to da
 date: "2026-05-08"
 thumbnail: "/images/tutorials/angular-components.jpg"
 tags: ["Angular", "TypeScript", "Frontend Development", "Components"]
-youtubeId: "37Gj5bS1rSg"
 author: "MJSimplified"
 ---
 

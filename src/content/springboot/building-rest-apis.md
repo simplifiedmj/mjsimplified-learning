@@ -6,7 +6,6 @@ description: "A comprehensive guide to creating RESTful web services using Sprin
 date: "2026-05-10"
 thumbnail: "/images/tutorials/spring-boot-rest.jpg"
 tags: ["Spring Boot", "Java", "REST API", "JPA", "Backend Development"]
-youtubeId: "qv2Py1505P4"
 author: "MJSimplified"
 ---
 

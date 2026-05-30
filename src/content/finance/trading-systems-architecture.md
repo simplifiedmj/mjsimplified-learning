@@ -6,7 +6,6 @@ description: "A deep dive into high-frequency trading (HFT) and institutional ex
 date: "2026-05-12"
 thumbnail: "/images/tutorials/trading-systems.jpg"
 tags: ["Finance Tech", "Trading Systems", "Low Latency", "System Architecture"]
-youtubeId: "b1e4ryqX_2o"
 author: "MJSimplified"
 ---
 

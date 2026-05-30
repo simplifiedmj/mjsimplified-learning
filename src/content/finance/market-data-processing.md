@@ -6,7 +6,6 @@ description: "Learn how modern financial systems process market data feeds at sc
 date: "2026-05-25"
 thumbnail: "/images/tutorials/market-data.jpg"
 tags: ["Finance Tech", "Market Data", "Low Latency", "UDP Multicast", "System Performance"]
-youtubeId: "J23yDq5m1u4"
 author: "MJSimplified"
 ---
 

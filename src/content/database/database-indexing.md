@@ -6,7 +6,6 @@ description: "A deep dive into database indexes, B-Trees, and how they optimize 
 date: "2026-05-20"
 thumbnail: "/images/tutorials/db-indexing.jpg"
 tags: ["SQL", "DBMS", "Database Indexing", "Performance Optimization"]
-youtubeId: "fsG1XZOBGA0"
 author: "MJSimplified"
 ---
 
