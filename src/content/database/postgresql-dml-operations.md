@@ -6,6 +6,7 @@ description: "Master Data Manipulation Language (DML) in PostgreSQL. Learn advan
 date: "2026-05-29"
 thumbnail: "/images/tutorials/postgres-dml.jpg"
 tags: ["PostgreSQL", "SQL", "DML", "Database Internals"]
+youtubeId: "Uiu00vXfsXg"
 author: "MJSimplified"
 ---
 
