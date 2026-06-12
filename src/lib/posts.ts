@@ -58,6 +58,24 @@ function extractToc(content: string): { id: string; text: string; level: number 
   return headings;
 }
 
+// Helper to resolve and format post date (using frontmatter, falling back to file creation/modification)
+function resolvePostDate(filePath: string, frontmatterDate?: any): string {
+  if (frontmatterDate) {
+    if (frontmatterDate instanceof Date) {
+      return frontmatterDate.toISOString().split('T')[0];
+    }
+    return String(frontmatterDate);
+  }
+  
+  try {
+    const stats = fs.statSync(filePath);
+    const dateObj = (stats.birthtime && stats.birthtime.getTime() > 0) ? stats.birthtime : stats.mtime;
+    return dateObj.toISOString().split('T')[0];
+  } catch (e) {
+    return new Date().toISOString().split('T')[0];
+  }
+}
+
 // Get all posts across all categories sorted by date descending
 export function getAllPosts(): PostMetadata[] {
   if (!fs.existsSync(contentDirectory)) {
@@ -80,15 +98,18 @@ export function getAllPosts(): PostMetadata[] {
           const fileContents = fs.readFileSync(filePath, 'utf8');
           const { data, content } = matter(fileContents);
           
+          const postDate = resolvePostDate(filePath, data.date);
+          
           allPosts.push({
             title: data.title || '',
             slug: data.slug || fileName.replace(/\.md$/, ''),
             category: category,
             description: data.description || '',
-            date: data.date || '',
+            date: postDate,
             thumbnail: data.thumbnail || '/images/placeholder.jpg',
             tags: data.tags || [],
-            youtubeId: data.youtubeId,
+            youtubeId: data.youtubeId || (data.youtubeIds && data.youtubeIds[0]) || undefined,
+            youtubeIds: data.youtubeIds || (data.youtubeId ? [data.youtubeId] : []),
             author: data.author || 'MJSimplified',
             readTime: calculateReadTime(content),
           });
@@ -97,8 +118,8 @@ export function getAllPosts(): PostMetadata[] {
     }
   });
 
-  // Sort posts by date descending
-  return allPosts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  // Sort posts by date ascending (oldest first)
+  return allPosts.sort((a, b) => (a.date > b.date ? 1 : -1));
 }
 
 // Get posts filtered by category
@@ -122,15 +143,18 @@ export async function getPostBySlug(category: string, slug: string): Promise<Pos
     const toc = extractToc(content);
     const readTime = calculateReadTime(content);
 
+    const postDate = resolvePostDate(filePath, data.date);
+
     return {
       title: data.title || '',
       slug: slug,
       category: category,
       description: data.description || '',
-      date: data.date || '',
+      date: postDate,
       thumbnail: data.thumbnail || '/images/placeholder.jpg',
       tags: data.tags || [],
-      youtubeId: data.youtubeId,
+      youtubeId: data.youtubeId || (data.youtubeIds && data.youtubeIds[0]) || undefined,
+      youtubeIds: data.youtubeIds || (data.youtubeId ? [data.youtubeId] : []),
       author: data.author || 'MJSimplified',
       readTime,
       contentHtml,

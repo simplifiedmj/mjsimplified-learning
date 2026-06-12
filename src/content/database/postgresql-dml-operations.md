@@ -3,7 +3,7 @@ title: "PostgreSQL DML Operations: Deep Dive into Insert, Update, Delete, and Up
 slug: "postgresql-dml-operations"
 category: "database"
 description: "Master Data Manipulation Language (DML) in PostgreSQL. Learn advanced INSERT patterns, UPDATE joins, DELETE returning, and the powerful ON CONFLICT upsert mechanism using the employee schema."
-date: "2026-05-29"
+date: "2026-05-30"
 thumbnail: "/images/tutorials/postgres-dml.jpg"
 tags: ["PostgreSQL", "SQL", "DML", "Database Internals"]
 youtubeId: "Uiu00vXfsXg"

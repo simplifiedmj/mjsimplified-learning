@@ -154,7 +154,7 @@ export default async function TutorialDetailPage({ params }: PageProps) {
             />
 
             {/* Embedded YouTube Section */}
-            {post.youtubeId && (
+            {post.youtubeIds && post.youtubeIds.length > 0 && (
               <div className="mt-12 rounded-3xl border border-slate-800 bg-slate-950 p-6 md:p-8 space-y-6">
                 <div className="flex items-center gap-2.5 border-b border-slate-900 pb-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-rose-500/10 text-rose-500">
@@ -165,14 +165,18 @@ export default async function TutorialDetailPage({ params }: PageProps) {
                     <p className="text-xs text-slate-500 mt-1">Watch a step-by-step visual of this technical concept.</p>
                   </div>
                 </div>
-                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black border border-slate-800 shadow-2xl">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${post.youtubeId}`}
-                    title={`Video for ${post.title}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0 h-full w-full border-0"
-                  />
+                <div className={post.youtubeIds.length > 1 ? "grid grid-cols-1 md:grid-cols-2 gap-6" : ""}>
+                  {post.youtubeIds.map((id, index) => (
+                    <div key={id} className="relative aspect-video w-full overflow-hidden rounded-xl bg-black border border-slate-800 shadow-2xl">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${id}`}
+                        title={`Video ${index + 1} for ${post.title}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full border-0"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             )}

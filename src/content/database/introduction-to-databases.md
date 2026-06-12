@@ -3,7 +3,7 @@ title: "Introduction to Databases: RDBMS, PostgreSQL Installation, and SQL Basic
 slug: "introduction-to-databases"
 category: "database"
 description: "Welcome to the Database series! Learn the core concepts of data, databases, RDBMS vs NoSQL, and follow step-by-step instructions to install PostgreSQL, create tables, and insert records."
-date: "2026-05-30"
+date: "2026-05-29"
 thumbnail: "/images/tutorials/db-intro.jpg"
 tags: ["DBMS", "SQL", "PostgreSQL", "Database Basics"]
 youtubeId: "TzBlHQu5vlQ"

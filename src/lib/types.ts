@@ -7,6 +7,7 @@ export interface PostMetadata {
   thumbnail: string;
   tags: string[];
   youtubeId?: string;
+  youtubeIds?: string[];
   author: string;
   readTime: number;
 }
